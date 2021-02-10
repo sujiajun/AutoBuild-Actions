@@ -4,8 +4,8 @@
 # AutoBuild DiyScript
 
 Diy_Core() {
-	Author=Hyy2001
-	Default_Device=d-team_newifi-d2
+	Author=KingKong
+	Default_Device=ZTE-E8820S
 
 	INCLUDE_AutoUpdate=false
 	INCLUDE_AutoBuild_Tools=false
