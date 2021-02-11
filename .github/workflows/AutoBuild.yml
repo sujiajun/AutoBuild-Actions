@@ -31,8 +31,10 @@ env:
   UPLOAD_RELEASE: false
   UPLOAD_FIRMWARE: true
   UPLOAD_BIN_DIR: true
-  REMOVE_OLD_RELEASE: false
-  REMOVE_WORKFLOW_RUNS: true
+  UPLOAD_COWTRANSFER: true
+  UPLOAD_CONFIG: true
+
+
 
 jobs:
   build:
