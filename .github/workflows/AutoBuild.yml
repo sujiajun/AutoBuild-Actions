@@ -41,7 +41,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
+    - name: 准备结束
       uses: actions/checkout@main
       
     - name: 检测脚本设置
@@ -56,7 +56,7 @@ jobs:
         echo "UPLOAD_COWTRANSFER=${UPLOAD_COWTRANSFER}" >> $GITHUB_ENV
         echo "UPLOAD_RELEASE=${UPLOAD_RELEASE}" >> $GITHUB_ENV
 
-    - name: Initialization Environment
+    - name: 开始安装编译所需系统
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
@@ -66,12 +66,12 @@ jobs:
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
 
-    - name: Clone Openwrt source code
+    - name: 下载系统源码
       run: |
         git clone -b master $REPO_URL openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
-    - name: Run Diy-Part1 Scripts
+    - name: 运行 Diy-Part1 脚本
       run: |
         chmod +x $DIY_SCRIPT
         cd openwrt
@@ -80,13 +80,13 @@ jobs:
         echo "Compile_Date=$(date +%Y%m%d)" > $GITHUB_WORKSPACE/Openwrt.info
         echo "Display_Date=$(date +'%Y/%m/%d')" >> $GITHUB_WORKSPACE/Openwrt.info
 
-    - name: Update & Install Feeds
+    - name: 更新 & 安装 Feeds
       run: |
         cd openwrt
         ./scripts/feeds update -a
         ./scripts/feeds install -a
 
-    - name: Run Diy-Part2 Scripts
+    - name: 运行 Diy-Part2 脚本
       run: |
         cp -Rf $GITHUB_WORKSPACE/build/diy/* $GITHUB_WORKSPACE/openwrt/
         [ -f $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
