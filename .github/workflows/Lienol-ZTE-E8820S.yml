@@ -24,7 +24,7 @@ on:
     types: [started]
 
 env:
-  REPO_URL: https://github.com/Lienol/openwrt
+  REPO_URL: https://github.com/coolsnowwolf/lede
   CONFIG_FILE: Lienol-ZTE-E8820S.config
   DIY_SCRIPT: Scripts/AutoBuild_DiyScript.sh
   FUNCTION_SCRIPT: Scripts/AutoBuild_Function.sh
@@ -68,7 +68,7 @@ jobs:
 
     - name: 下载系统源码
       run: |
-        git clone -b 19.07 $REPO_URL openwrt
+        git clone -b 19.07 https://github.com/Lienol/openwrt openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
     - name: 运行 Diy-Part1 脚本
