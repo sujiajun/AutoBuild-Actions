@@ -25,7 +25,7 @@ on:
 
 env:
   REPO_URL: https://github.com/lienol/openwrt
-  CONFIG_FILE: Lienol-ZTE-E8820S.config
+  CONFIG_FILE: ZTE-E8820S.config
   DIY_SCRIPT: Scripts/AutoBuild_DiyScript.sh
   FUNCTION_SCRIPT: Scripts/AutoBuild_Function.sh
   UPLOAD_RELEASE: false
