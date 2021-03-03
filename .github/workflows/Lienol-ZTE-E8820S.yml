@@ -68,7 +68,7 @@ jobs:
 
     - name: 下载系统源码
       run: |
-        git clone -b 19.07 $REPO_URL openwrt
+        git clone -b 21.02 $REPO_URL openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
     - name: 运行 Diy-Part1 脚本
