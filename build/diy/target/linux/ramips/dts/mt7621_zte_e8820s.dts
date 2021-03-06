@@ -23,24 +23,9 @@
 	leds {
 		compatible = "gpio-leds";
 
-		led_sys: sys {
-			label = "e8820s:white:sys";
-			gpios = <&gpio 16 GPIO_ACTIVE_LOW>;
-		};
-
 		led_power: power {
 			label = "e8820s:white:power";
 			gpios = <&gpio 3 GPIO_ACTIVE_LOW>;                                       
-		};
-
-		wlan2g {
-			label = "e8820s:white:wlan2g";
-			gpios = <&gpio 14 GPIO_ACTIVE_LOW>;
-		};
-
-		wlan5g {
-			label = "e8820s:white:wlan5g";
-			gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
 		};
 	};
 
